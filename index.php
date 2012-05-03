@@ -1,6 +1,6 @@
 <!DOCTYPE HMTL>
 <?php 
-	require "connect.php";
+	//require "connect.php";
 /*session_start(); 
 	
 	require_once "sdk/src/facebook.php";
@@ -27,6 +27,8 @@
 	}
 	
 	var_dump ($user_profile);*/
+	
+	require "check_user.php"; //this adds the user to our table if it doesn't already exist
 ?>
 <html>
 	<head>

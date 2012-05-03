@@ -8,7 +8,7 @@
 
 	while($row = mysql_fetch_array($result))
 	{
-		$return .= "<tr><td>" . $row['username'] . "</td><td>" . $row['wins'] . "</td></tr>";
+		$return .= "<tr><td>" . $row['name'] . "</td><td>" . $row['wins'] . "</td></tr>";
 	}
 	$return .= "</table>";
 	
