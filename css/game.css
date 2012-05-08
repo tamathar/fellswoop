@@ -333,3 +333,15 @@ form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #
 	width:214px;
 }
 .button:hover { background:#ddd; }
+
+.game {
+	width: 480px;
+	height: 25px;
+	border: 1px solid #000000;
+	background-color: #EEEEEE;
+	text-align: left;
+	vertical-align: middle;
+	padding: 5px 5px 5px 0px;
+	margin: 5px 5px 5px 6px;
+		/*margin: auto;*/
+}

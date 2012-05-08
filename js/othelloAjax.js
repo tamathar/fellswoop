@@ -12,6 +12,8 @@ function loadGame(id)
 		finished = info[4];
 		gameId = info[5];
 		
+		$('#main').html("<canvas id = \"Game\" width = 501 height = 501 ></canvas>");
+		setup("Game");
 		
 		clearCanvas("Game");
 		drawBoard("Game");
@@ -38,4 +40,15 @@ function saveGame()
 {
 	
 	$.post("ajaxSave.php", { gameId: gameId, done: finished, turn: turn, layout: pieces });
+}
+
+function currentGames()
+{
+	$.post("games.php", function(data){
+		$('#main').html(data);
+		$('div.game').click(function(e)
+		{
+			loadGame($(this).attr('id'));			
+		});
+	});
 }

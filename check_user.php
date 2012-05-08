@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	require "connect.php";
 	require_once "sdk/src/facebook.php";
 	
@@ -28,5 +28,6 @@
 		
 		
 		mysql_query("INSERT INTO  users (userid, name) VALUES ('" . $userid . "',  '" . $name . "') ON DUPLICATE KEY UPDATE userid=userid;") or die(mysql_error());
+		$_SESSION['username'] = $name;
 	}
 ?>

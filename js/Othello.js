@@ -1,6 +1,6 @@
 
 //GLOBAL VAR FOR THE SIZE OF EACH GAME BOARD SQUARE
-var spaceSize = 75;
+var spaceSize = 62;
 var mouseX;
 var mouseY;
 var mouseSpace;
@@ -203,7 +203,7 @@ function capturePieces(color, x, y)
 	var i = 0;
 	var j = 0;
 	var mypieces;
-	
+	alert(pieces);
 	//fill left
 	while(checkLeft(x-(i+1), y, color, true))
 	{
@@ -266,6 +266,7 @@ function capturePieces(color, x, y)
 		pieces = placePiece(((y+(j+1))*8+(x+(i+1))), color, pieces);
 		i++; j++;
 	}
+	alert(pieces);
 }
 
 //This function returns whether or not a space is a valid move - color is the color of the player, not oppenent

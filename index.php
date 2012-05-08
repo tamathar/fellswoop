@@ -1,7 +1,7 @@
 <!DOCTYPE HMTL>
 <?php 
 	//require "connect.php";
-/*session_start(); 
+session_start(); 
 	
 	require_once "sdk/src/facebook.php";
 	
@@ -9,24 +9,19 @@
 	array(
 		'appId'  => '394565850573684',
 		'secret' => '4ef12047f4dd402b76ca6a1b68bf8502',
+		'cookie' => true
 	));
 	
-	$user = $facebook->getUser();
 	
-	if($user){
-		try
-		{
-			$user_profile = $facebook->api('/me');
-			
-		}
-		catch (FacebookApiException $e) 
-		{
-			$login = $facebook->getLoginUrl();
+	
+	if(! $facebook->getUser())
+	{
+			$login = $facebook->getLoginUrl(array(‘req_perms’ => ‘publish_stream’));
 			header ("Location: $login");
-		}
 	}
 	
-	var_dump ($user_profile);*/
+	$user_profile = $facebook->api('/me');
+	//var_dump ($user_profile);
 	
 	require "check_user.php"; //this adds the user to our table if it doesn't already exist
 ?>
@@ -243,10 +238,10 @@
 		var turn = "0";
 		var finished = "0";
 		var gameId = "0";
-		var currentUser = '<?php// echo $_SESSION['username'];?>';
+		var currentUser = '<?php echo $_SESSION['username'];?>';
 	</script>
 	</head>
-	<body >
+	<body onload="currentGames();">
 	
 
 
@@ -288,8 +283,8 @@
 
 		
 	<h1> Fellswoop </h1>
-	
-	<div id = "main" style="height:501; width:501; background-color:#999999; float:right;">working</div>
+	<?php //$status = $facebook->api('/me/feed', 'POST', array(message => 'This post came from my app.', link => 'http://www.google.com'));	?>
+	<div id = "main" style="height:501; width:501; background-color:#999999; float:right;"> &nbsp </div>
 
 
 
