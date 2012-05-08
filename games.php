@@ -6,12 +6,8 @@
 	$query="SELECT * FROM games where Player1='$username' or Player2='$username'";
 
 	$result=mysql_query($query) or die(mysql_error());
-	//$result1=mysql_fetch_array($result);
-	//echo $result1['username'];
-	
-	
-	//echo "start" . $username . "end" ;
 
+	echo "<h2 style='text-align:center'>Current Games</h2>";
 	
 	while($info =  mysql_fetch_assoc( $result))
 	{

@@ -71,7 +71,7 @@ function drawPieces(id, layOut)
 		{
 			var x = (spaceSize * (i%8)) + (spaceSize/2);
 			var y = (spaceSize * (Math.round((i/8) - .5))) + (spaceSize/2);
-			//alert(x + " " + y);
+			
 			context.beginPath();
 			context.arc(x, y , (spaceSize/2) - 3, 0*Math.PI, 2*Math.PI, true);
 			context.stroke();
@@ -203,7 +203,7 @@ function capturePieces(color, x, y)
 	var i = 0;
 	var j = 0;
 	var mypieces;
-	alert(pieces);
+	
 	//fill left
 	while(checkLeft(x-(i+1), y, color, true))
 	{
@@ -266,7 +266,7 @@ function capturePieces(color, x, y)
 		pieces = placePiece(((y+(j+1))*8+(x+(i+1))), color, pieces);
 		i++; j++;
 	}
-	alert(pieces);
+	
 }
 
 //This function returns whether or not a space is a valid move - color is the color of the player, not oppenent

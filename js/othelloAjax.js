@@ -30,15 +30,34 @@ function loadGame(id)
 function createGame(player1, player2)
 {
 	$.post("ajaxCreate.php", { player: player1, opponent: player2 }, function(data) {
-		//alert(data);
-		loadGame(data);
+		if(data != "-1")
+			loadGame(data);
+		else
+			$('#main').html("<h2 style='text-align:center'>Game Creation Error</h2><div class='message'>You already have a game with this opponent. Finish one fight before starting another.");
+			$('#main').append("<div style='margins:auto;width 200px;'><input type='button' id='games' value='Go to Current Games'></input><input type='button' id='recreate' value='Select Other Opponent'></input>");
+			
+			$('#games').click(function()
+			{
+				currentGames();
+			});
+			
+			$('#recreate').click(function()
+			{
+				$.post("playersAjax.php", function(data)
+					{
+						$("#main").html(data);
+						$("div.player").click(function()
+						{
+							createGame(currentUser, $(this).attr('id'));
+						});
+					});
+			});
 	});
 }
 
 //save a game
 function saveGame()
 {
-	
 	$.post("ajaxSave.php", { gameId: gameId, done: finished, turn: turn, layout: pieces });
 }
 
