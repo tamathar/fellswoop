@@ -1,0 +1,75 @@
+body{
+
+
+
+background-image:url(../images/other.jpg);
+
+*/
+}
+
+
+#center {
+ 
+position: relative;
+
+   width: 601px;
+   height: 601px;
+    margin: 0px auto;
+	margin-top:50px;
+
+
+}
+
+.title img{
+-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+/*background-image:url(../images/title.png);*/
+margin-top:0px;
+    margin-left:50px;
+	}
+	
+.title h1{
+margin-top:-30px;
+    margin-left:30px;
+font-size: 90px;
+/*font-family: VTKS WORKER;*/
+
+font-family: Caffeine Blackout;
+}
+
+
+
+
+
+
+
+#main {
+	position: relative;
+
+	margin-top: 60px;
+	margin-right:130px;
+	border:groove 2px;
+
+-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+overflow-x: hidden;
+	overflow-y: scroll;
+
+}
+
+#main h1{
+font-family: Headliner No. 45 ;
+font-size: 30px;
+	text-align:center;
+	
+        text-shadow: 1px 1px 1px #000;
+        
+	}
+
+
+
+
+
+	
