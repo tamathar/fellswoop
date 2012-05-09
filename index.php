@@ -37,6 +37,7 @@
 		<script src="js/othelloAjax.js"></script>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		   <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
 		<script>
 			 $(function() {
                 $('#nav > div').hover(
@@ -77,7 +78,28 @@
 			setup("Game");
 		
 			
-		
+		FB.init({
+    appId: '394565850573684',
+    status: true,
+    cookie: true,
+    xfbml: true
+});
+
+function sendRequests() {
+    FB.ui({
+        method: 'apprequests',
+        message: 'Invite friends to play',
+        data: 'tracking information for the user'
+    }, function(response) {
+        if (response != null && response.request_ids && response.request_ids.length > 0) {
+            for (var i = 0; i < response.request_ids.length; i++) {
+                alert("Invited: " + response.request_ids[i]);
+            }
+        } else {
+            alert('No invitations sent');
+        }
+    });
+}
 
 				$('#submit_btn').click(function()
 				{
@@ -262,7 +284,7 @@
                     <a href="#" class="icon"></a>
                     <h2>Share</h2>
                     <ul>
-                        <li><a href="#">Invite</a></li>
+                        <li><a href="#" onclick="sendRequests();return false;>Invite</a></li>
                     </ul>
                 </div>
 	</div>
