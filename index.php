@@ -10,7 +10,7 @@
 		'cookie' => true
 	));
 	
-	
+
 	
 	if(! $facebook->getUser())
 	{
@@ -22,7 +22,8 @@
 	//var_dump ($user_profile);
 	
 	require "check_user.php"; //this adds the user to our table if it doesn't already exist
-	
+	//$status = $facebook->api('394565850573684/achievements','POST', array('access_token' => '394565850573684|4ef12047f4dd402b76ca6a1b68bf8502', 'achievement' => 'apps.facebook.com/fellswoop/ach1.html', 'display_order' => 1));
+	//var_dump($status);
 	//$status = $facebook->api('/me/feed', 'POST', array('message' => 'This post came from my app.'));
 ?>
 <!DOCTYPE HMTL>

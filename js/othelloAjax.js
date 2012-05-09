@@ -17,7 +17,12 @@ function loadGame(id)
 		finished = info[4];
 		gameId = info[5];
 		
-		$('#main').html("<canvas id = \"Game\" width = 501 height = 501 ></canvas>");
+		var currentpturn;
+		if(turn == 0)
+			currentpturn = player1;
+		else
+			currentpturn = player2;
+		$('#main').html("<h3 style='text-align:center'>" + currentpturn + "'s Turn</h3><canvas id = \"Game\" width = 501 height = 501 ></canvas>");
 		setup("Game");
 		
 		clearCanvas("Game");
