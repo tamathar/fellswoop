@@ -12,16 +12,16 @@
     position:absolute;
 }
 .user{
-    top:125px;
-    left:110px;
+    top:170px;
+    left:150px;
 }
-.home{
-   top:300px;
-   left:60px;
+.fellswoop{/*fellswoop menu */
+   top:360px;
+   left:80px;
 }
-.shop{
-   top:475px;
-   left:110px;
+.facebook{/*facebook menu */
+   top:560px;
+   left:150px;
 }
 .camera{
    top:230px;
@@ -42,13 +42,15 @@ a.icon{
 .user a.icon{
     background:transparent url(../images/user.png) no-repeat 0px 0px;
 }
-.home a.icon{
+
+.fellswoop a.icon{ /*fellswoop menu */
     background:transparent url(../images/try.png) no-repeat 0px 0px;
 	border-radius:3px 3px 3px 3px;
         -moz-border-radius: 3px; /* Firefox */
         -webkit-border-radius: 3px;
 }
-.shop a.icon{
+
+.facebook a.icon{ /*facebook menu */
     background:transparent url(../images/fb.png) no-repeat 0px 0px;
 }
 .camera a.icon{

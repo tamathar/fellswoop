@@ -1,7 +1,5 @@
-<!DOCTYPE HMTL>
 <?php 
-	//require "connect.php";
-session_start(); 
+	session_start(); 
 	
 	require_once "sdk/src/facebook.php";
 	
@@ -25,6 +23,7 @@ session_start();
 	
 	require "check_user.php"; //this adds the user to our table if it doesn't already exist
 ?>
+<!DOCTYPE HMTL>
 <html>
 	<head>
 		 <LINK href="css/game.css" rel="stylesheet" type="text/css">
@@ -36,30 +35,26 @@ session_start();
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		   <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 		<script>
-			$(function() {
-                $('#nav > div').hover( function () 
-				{
+			 $(function() {
+                $('#nav > div').hover(
+                function () {
                     var $this = $(this);
-                    $this.find('img').stop().animate(
-					{
+                    $this.find('img').stop().animate({
                         'width'     :'199px',
                         'height'    :'199px',
                         'top'       :'-25px',
                         'left'      :'-25px',
                         'opacity'   :'1.0'
-                    },500,'easeOutBack',function()
-					{
+                    },500,'easeOutBack',function(){
                         $(this).parent().find('ul').fadeIn(700);
-					});
+                    });
 
                     $this.find('a:first,h2').addClass('active');
                 },
-                function () 
-				{
+                function () {
                     var $this = $(this);
                     $this.find('ul').fadeOut(500);
-                    $this.find('img').stop().animate(
-					{
+                    $this.find('img').stop().animate({
                         'width'     :'52px',
                         'height'    :'52px',
                         'top'       :'0px',
@@ -68,18 +63,19 @@ session_start();
                     },5000,'easeOutBack');
 
                     $this.find('a:first,h2').removeClass('active');
-                });
+                }
+            );
             });
 
 		
-			$(document).ready(function() 
-			{
+		$(document).ready(function() {
 		
 		
-				setup("Game");
+			setup("Game");
 		
 			
 		
+
 				$('#submit_btn').click(function()
 				{
 		
@@ -212,6 +208,8 @@ session_start();
 			var currentUser = '<?php echo $_SESSION['username'];?>';
 		</script>
 	</head>
+	
+	
 	<body onload="currentGames();">
 	
 
@@ -223,13 +221,12 @@ session_start();
                     <a href="#" class="icon"></a>
                     <h2>User</h2>
                     <ul>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">Achievements</a></li>
                     </ul>
                 </div>
 			
-			<div class="item home">
+			<div class="item fellswoop">
                     <img src="images/bg_home.png" alt="" width="199" height="199" class="circle"/>
                     <a href="#" class="icon"></a>
                     <h2>Fellswoop</h2>
@@ -240,22 +237,30 @@ session_start();
                     </ul>
                 </div>
 				
-				 <div class="item shop">
+
+				 <div class="item facebook">
                     <img src="images/bg_shop.png" alt="" width="199" height="199" class="circle"/>
                     <a href="#" class="icon"></a>
                     <h2>Share</h2>
                     <ul>
                         <li><a href="#">Invite</a></li>
-                        
                     </ul>
                 </div>
 	</div>
 				
 
-		
-	<h1> Fellswoop </h1>
-	<?php //$status = $facebook->api('/me/feed', 'POST', array(message => 'This post came from my app.', link => 'http://www.google.com'));	?>
-	<div id = "main" style="height:501; width:501; background-color:#999999; float:right;"> &nbsp </div>
+		<div class="title">
+		<img src="images/b.png"  alt="" />
+	<!--<h1> Fellswoop </h1> -->
+	</div>
+	
+	<div id = "main" style="height:501; width:501; background-color:#23B3BA; float:right;">
+	<h1> Top Scores </h1>
+	<h2> a </h2>
+
+	
+	</div>
+
 
 
 

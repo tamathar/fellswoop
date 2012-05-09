@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	require "connect.php";
 	require_once "sdk/src/facebook.php";
 	

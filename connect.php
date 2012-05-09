@@ -1,7 +1,7 @@
 <?php
 
   //Connecting to the server
- $con = mysql_connect("mysql3.000webhost.com","a1704801_tam","Erodae5") or die(mysql_error());    // machine name, username and password
+ $con = mysql_connect("localhost","pnigelco_code","St@rSp@ngled") or die(mysql_error());    // machine name, username and password
  
   if (!$con)
   {
@@ -10,6 +10,6 @@
   
   //select database
   
-		mysql_select_db("a1704801_tds09b",  $con);
-		
+		mysql_select_db("pnigelco_fellswoop",  $con);
+
 ?>
