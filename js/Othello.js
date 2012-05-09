@@ -130,10 +130,21 @@ function setup(id)
 			drawPieces(id, pieces);
 			toggleTurn();//change turn
 			checkPossible(color, 0);//check to make sure we don't retoggle
+			var winning = pieceCount();
 			if(finished == "1")//if the game is over say so
 			{
-				turn = "3";
-				$("#turn").html("It is OVER");
+				if(winning == Player1;)
+				{
+					turn = "2";
+					$("#turn").html(Player1 + " Wins!");
+				}
+				else
+				{
+					turn = "3";
+					$("#turn").html(Player2 + " Wins!");
+				}
+				
+				$.post('Winner.php', { user: winning }, function(data) {});
 			}
 			saveGame();
 			pieceCount();
@@ -172,7 +183,10 @@ function checkPossible(color, count)
 		/*if(color == "B")
 			winner = player1;
 		else
-			winner = player2;*/
+			winner = player2;*/		
+			
+		
+
 	}
 				
 }
@@ -305,8 +319,8 @@ function pieceCount()
 			wCount++;
 	}
 	
-	$('#bcount').html(player1 + ": " + bCount + " pieces");
-	$('#wcount').html(player2 + ": " + wCount + " pieces");
+	$('#bcount').html(player1 + ": " + bCount);
+	$('#wcount').html(player2 + ": " + wCount);
 	
 	if(bCount > wCount)
 		return player1;
