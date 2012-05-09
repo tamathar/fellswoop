@@ -22,7 +22,7 @@ function loadGame(id)
 			currentpturn = player1;
 		else
 			currentpturn = player2;
-		$('#main').html("<h3 style='text-align:center'>" + currentpturn + "'s Turn</h3><canvas id = \"Game\" width = 501 height = 501 ></canvas>");
+		$('#main').html("<h3 style='text-align:center'>" + currentpturn + "'s Turn</h3><canvas id = \"Game\" width = 551 height = 501 ></canvas>");
 		setup("Game");
 		
 		clearCanvas("Game");
