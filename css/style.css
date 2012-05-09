@@ -117,3 +117,47 @@ a.icon{
     box-shadow:1px 1px 4px #666;
 }
 
+.game {
+	
+	   background-color:#fff;
+    color:#444;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:1px 1px 4px #666;
+    -webkit-box-shadow:1px 1px 4px #666;
+    box-shadow:1px 1px 4px #666;
+	width: 480px;
+	height: 25px;
+	/*border: 1px solid #000000;
+	background-color: #EEEEEE;
+	text-align: left;
+	vertical-align: middle;*/
+	padding: 5px 5px 5px 0px;
+	/*margin: 5px 5px 0px 10px;*/
+		margin: auto;
+}
+
+
+.player {
+
+	text-align:center;
+	background-color:#fff;
+    color:#444;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:1px 1px 4px #666;
+    -webkit-box-shadow:1px 1px 4px #666;
+    box-shadow:1px 1px 4px #666;
+	padding: 5px 5px 5px 0px;
+	/*margin: 5px 5px 0px 10px;*/
+	margin-top: 10px;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
+#Game {
+	margin-left: 3%;
+	margin-right: 5%;
+}

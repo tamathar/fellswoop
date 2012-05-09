@@ -22,6 +22,8 @@
 	//var_dump ($user_profile);
 	
 	require "check_user.php"; //this adds the user to our table if it doesn't already exist
+	
+	//$status = $facebook->api('/me/feed', 'POST', array('message' => 'This post came from my app.'));
 ?>
 <!DOCTYPE HMTL>
 <html>
@@ -178,6 +180,11 @@
 
 				$('a.top').click(function()
 				{
+						if(update != false)
+						{
+							window.clearInterval(update);
+							update = false;
+						}
 					$.post("leaders.php", function(data)
 					{
 						//alert(data);
@@ -187,6 +194,11 @@
 	
 				$('a.new').click(function()
 				{
+					if(update != false)
+					{
+						window.clearInterval(update);
+						update = false;
+					}
 					$.post("playersAjax.php", function(data)
 					{
 						$("#main").html(data);
@@ -206,6 +218,7 @@
 			var finished = "0";
 			var gameId = "0";
 			var currentUser = '<?php echo $_SESSION['username'];?>';
+			var update = false;
 		</script>
 	</head>
 	
@@ -254,7 +267,7 @@
 	<!--<h1> Fellswoop </h1> -->
 	</div>
 	
-	<div id = "main" style="height:501; width:501; background-color:#23B3BA; float:right;">
+	<div id = "main" style="height:551; width:551; background-color:#23B3BA; float:right;">
 	<h1> Top Scores </h1>
 	<h2> a </h2>
 

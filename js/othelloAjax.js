@@ -1,6 +1,11 @@
 //load a game
 function loadGame(id)
 {
+	if(update != false)
+	{
+		window.clearInterval(update);
+		update = false;
+	}
 	$.post("ajaxLoad.php", { gameId: id }, function(data) {
 		//alert(id);
 		var info = data.split(",");
@@ -23,6 +28,9 @@ function loadGame(id)
 		var winning = pieceCount();
 		if(finished == "1")
 			$('#turn').html(winning + " has triumphed!");
+		
+		
+		update = self.setInterval("loadGame(" + id + ")",1000*5);
 	});
 }
 
@@ -63,6 +71,11 @@ function saveGame()
 
 function currentGames()
 {
+	if(update != false)
+	{
+		window.clearInterval(update);
+		update = false;
+	}
 	$.post("games.php", function(data){
 		$('#main').html(data);
 		$('div.game').click(function(e)
