@@ -1,13 +1,20 @@
 <?php
 	session_start();
 	require("connect.php");
-	
+
 	$username=$_SESSION['username'];
-	$query="SELECT * FROM games where Player1='$username' or Player2='$username'";
+	$status = $_POST['status'];
+	
+	if($status != 0)
+	{
+		$result = mysql_query("SELECT * FROM users where name='$username';") or die(mysql_error());
+		$info = mysql_fetch_assoc($result);
+		echo $info['wins'] . "</h3>";
+	}
+	$query="SELECT * FROM games where (Player1='$username' or Player2='$username') and finished='$status';";
 
 	$result=mysql_query($query) or die(mysql_error());
 
-	echo "<h2 style='text-align:center'>Current Games</h2>";
 	
 	while($info =  mysql_fetch_assoc( $result))
 	{

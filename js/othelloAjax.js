@@ -19,10 +19,15 @@ function loadGame(id)
 		
 		var currentpturn;
 		if(turn == 0)
-			currentpturn = player1;
+			currentpturn = player1 + "'s Turn";
+		else if(turn == 1)
+			currentpturn = player2 + "'s Turn";
+		else if(turn == 2)
+			currentpturn = player1 + " Wins!";
 		else
-			currentpturn = player2;
-		$('#main').html("<h3 style='text-align:center'>" + currentpturn + "'s Turn</h3><canvas id = \"Game\" width = 551 height = 501 ></canvas>");
+			currentpturn = player2 + " Wins!";
+			
+		$('#main').html("<h3 id='turn' style='text-align:center'>" + currentpturn + "</h3><canvas id = \"Game\" width = 551 height = 501 ></canvas>");
 		setup("Game");
 		
 		clearCanvas("Game");
@@ -30,9 +35,7 @@ function loadGame(id)
 		drawPieces("Game", pieces);
 		toggleTurn();
 		toggleTurn();
-		var winning = pieceCount();
-		if(finished == "1")
-			$('#turn').html(winning + " has triumphed!");
+
 		
 		
 		update = self.setInterval("loadGame(" + id + ")",1000*5);
@@ -81,11 +84,28 @@ function currentGames()
 		window.clearInterval(update);
 		update = false;
 	}
-	$.post("games.php", function(data){
-		$('#main').html(data);
+	$.post("games.php", {status: 0}, function(data){
+		$('#main').html("<h2 style='text-align:center'>Current Games</h2>" + data);
 		$('div.game').click(function(e)
 		{
 			loadGame($(this).attr('id'));			
 		});
 	});
+}
+
+function pastGames()
+{
+	if(update != false)
+	{
+		window.clearInterval(update);
+		update = false;
+	}
+	$.post("games.php", {status: 1}, function(data){
+		$('#main').html("<h2 style='text-align:center'>Past Games</h2><h3 style='text-align:center'>Total Wins: " + data);
+		$('div.game').click(function(e)
+		{
+			loadGame($(this).attr('id'));			
+		});
+	});
+	
 }

@@ -133,18 +133,18 @@ function setup(id)
 			var winning = pieceCount();
 			if(finished == "1")//if the game is over say so
 			{
-				if(winning == Player1;)
+				if(winning == player1)
 				{
 					turn = "2";
-					$("#turn").html(Player1 + " Wins!");
+					$("#turn").html(player1 + " Wins!");
 				}
 				else
 				{
 					turn = "3";
-					$("#turn").html(Player2 + " Wins!");
+					$("#turn").html(player2 + " Wins!");
 				}
 				
-				$.post('Winner.php', { user: winning }, function(data) {});
+				$.post('Winner.php', { user: winning }, function(data) {})
 			}
 			saveGame();
 			pieceCount();
@@ -197,12 +197,12 @@ function toggleTurn()
 	if(turn == "0")
 	{
 		turn = "1";
-		$("#turn").html("It is " + player2 + "'s turn. (White)");
+		//$("#turn").html("It is " + player2 + "'s turn. (White)");
 	}
 	else
 	{
 		turn = "0";
-		$("#turn").html("It is " + player1 + "'s turn. (Black)");
+		//$("#turn").html("It is " + player1 + "'s turn. (Black)");
 	}
 }
 

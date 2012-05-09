@@ -124,6 +124,11 @@
 				{
 					currentGames();
 				});
+				
+				$('a.old').click(function() 
+				{
+					pastGames();
+				});
 	
 				$('#btn').click(function()
 				{
@@ -235,7 +240,7 @@
                     <a href="#" class="icon"></a>
                     <h2>User</h2>
                     <ul>
-                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#" class="old">Statistics</a></li>
                         <li><a href="#">Achievements</a></li>
                     </ul>
                 </div>
